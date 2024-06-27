@@ -21,7 +21,7 @@ export default mergeConfig(
             },
             server: {
                 deps: {
-                    inline: ['vuetify']
+                    inline: ['vuetify', "@cnamts/synapse-bridge", "@cnamts/design-tokens"]
                 }
             },
             setupFiles: ['./tests/unit/setup.ts']
