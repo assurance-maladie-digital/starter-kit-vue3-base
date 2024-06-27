@@ -42,7 +42,7 @@ fournisseur d'hébergement prenant en charge Vue.js.
 
 ```` bash
 		"pnpm build": Build du projet avec ckeck des Types,
-		"pnpm build-only": "Build du projet",
+		"pnpm build-only": Build du projet,
 		"pnpm dev": Lancement du serveur de développement,
 		"pnpm preview": Lancement du serveur de prévisualisation,
 		"pnpm test:unit": Lancement des tests unitaires,
