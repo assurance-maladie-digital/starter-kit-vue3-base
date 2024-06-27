@@ -81,9 +81,9 @@ import { BackBtn } from '@cnamts/synapse-bridge';
 
 import { computed } from "vue";
 
-import { getConfig } from '../composables/injectEnv';
-import { useCounterStore } from "../stores/counter";
-import { useNotificationStore } from "../stores/notifications";
+import { getConfig } from '@/composables/injectEnv';
+import { useCounterStore } from "@/stores/counter";
+import { useNotificationStore } from "@/stores/notifications";
 
 const data = getConfig();
 const counterStore = useCounterStore();
