@@ -1,10 +1,12 @@
 <template>
-  <h1 class="text-primary">{{ data ? data.config.value.title : 'Accueil' }}</h1>
+  <h1 class="text-primary">{{ title ? title : 'Accueil' }}</h1>
+
   <div class="mt-6 mb-12 d-flex align-center justify-center">
     <VCard width="695" variant="tonal" class="d-flex">
       <img src="/starter-kit.svg" alt="Starter kit"/>
     </VCard>
   </div>
+
   <v-row justify="center">
     <v-col
       cols="12"
@@ -18,7 +20,7 @@
           Exemple de composant Vue
         </v-card-title>
         <v-card-item>
-          <HelloWorld :msg="data ? data.config.value.message : 'Bonjour'"/>
+          <HelloWorld :msg="message ? message : 'Bonjour'"/>
         </v-card-item>
       </v-card>
     </v-col>
@@ -77,6 +79,8 @@
 import HelloWorld from '../components/HelloWorld.vue';
 import { BackBtn } from '@cnamts/synapse-bridge';
 
+import { computed } from "vue";
+
 import { getConfig } from '../composables/injectEnv';
 import { useCounterStore } from "../stores/counter";
 import { useNotificationStore } from "../stores/notifications";
@@ -84,6 +88,14 @@ import { useNotificationStore } from "../stores/notifications";
 const data = getConfig();
 const counterStore = useCounterStore();
 const notificationStore = useNotificationStore();
+
+const title = computed(() => {
+   return data ? data.config.value.title : 'Accueil';
+});
+
+const message = computed(() => {
+   return data ? data.config.value.message : 'Bonjour';
+});
 
 function createNotification() {
   const payload = {
