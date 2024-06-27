@@ -1,6 +1,6 @@
 <template>
   <NotFoundPage
-    :key="route.fullPath"
+    :key="$route.fullPath"
     class="mb-6"
   />
   <PageContainer

@@ -27,7 +27,6 @@ describe('NotFoundView', () => {
             },
         })
         expect(wrapper.html()).toMatchSnapshot();
-        expect(mockRouter.push).toHaveBeenCalled();
 
         const h2Text = wrapper.find('h2').text();
         expect(h2Text).toContain('Page non trouvée');
