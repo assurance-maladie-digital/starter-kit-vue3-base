@@ -1,5 +1,4 @@
 # **Starter Kit Vue 3 (sans Nuxt)**
-=
 
 🗃️ Ce Starter Kit contient les composants du Design System de l'Assurance Maladie réécrits en Vue 3, ainsi que les outils nécessaires pour mettre en place un nouveau projet.
 
