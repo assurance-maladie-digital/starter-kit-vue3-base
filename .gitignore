@@ -1,4 +1,6 @@
-# Vue dev/build outputs
+# Nuxt dev/build outputs
+.output
+.nuxt
 .nitro
 .cache
 dist
@@ -26,8 +28,8 @@ logs
 .env.*
 !.env.example
 
-# Coverage
-**/tests/**/coverage
+# Tests coverage
+**/tests/**/coverage/
 
 # Cypress
 cypress/fixtures
