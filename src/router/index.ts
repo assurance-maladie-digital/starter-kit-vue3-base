@@ -5,34 +5,34 @@ import MaintenanceView from '../views/MaintenanceView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: HomeView
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/tokens',
-      name: 'tokens',
-      component: TokensView
-    },
-    {
-      path: '/maintenance',
-      name: 'maintenance',
-      component: MaintenanceView
-    },
-    {
-      path: '/not-found',
-      name: 'not-found',
-      component: NotFoundView
-    }
-  ]
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/',
+            name: 'index',
+            component: HomeView,
+        },
+        {
+            path: '/home',
+            name: 'home',
+            component: HomeView,
+        },
+        {
+            path: '/tokens',
+            name: 'tokens',
+            component: TokensView,
+        },
+        {
+            path: '/maintenance',
+            name: 'maintenance',
+            component: MaintenanceView,
+        },
+        {
+            path: '/not-found',
+            name: 'not-found',
+            component: NotFoundView,
+        },
+    ],
 })
 
 export default router
