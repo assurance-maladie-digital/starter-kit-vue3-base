@@ -4,6 +4,6 @@
 
 <script setup lang="ts">
 defineProps<{
-  msg: string | undefined
+    msg: string | undefined
 }>()
 </script>

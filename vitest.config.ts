@@ -1,5 +1,5 @@
-import {fileURLToPath} from 'node:url'
-import {mergeConfig, defineConfig, configDefaults} from 'vitest/config'
+import { fileURLToPath } from 'node:url'
+import { mergeConfig, defineConfig, configDefaults } from 'vitest/config'
 import viteConfig from './vite.config'
 
 export default mergeConfig(
@@ -13,18 +13,18 @@ export default mergeConfig(
                 enabled: true,
                 provider: 'istanbul',
                 reportsDirectory: './tests/unit/coverage',
-                include: [
-                    '**/components/**',
-                    '**/views/**',
-                    '**/store/**',
-                ]
+                include: ['**/components/**', '**/views/**', '**/store/**'],
             },
             server: {
                 deps: {
-                    inline: ['vuetify', "@cnamts/synapse-bridge", "@cnamts/design-tokens"]
-                }
+                    inline: [
+                        'vuetify',
+                        '@cnamts/synapse-bridge',
+                        '@cnamts/design-tokens',
+                    ],
+                },
             },
-            setupFiles: ['./tests/unit/setup.ts']
-        }
+            setupFiles: ['./tests/unit/setup.ts'],
+        },
     })
 )
