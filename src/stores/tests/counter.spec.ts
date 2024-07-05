@@ -3,7 +3,7 @@ import { useCounterStore } from '../counter'
 import { describe, it, expect, beforeEach } from 'vitest'
 
 describe('Counter Store', () => {
-    let store: any
+    let store: ReturnType<typeof useCounterStore>
 
     beforeEach(() => {
         const pinia = createPinia()
