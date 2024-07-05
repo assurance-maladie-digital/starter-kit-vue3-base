@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import TokensView from '../views/TokensView.vue'
 import MaintenanceView from '../views/MaintenanceView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
+import DatePicker from '../views/DatePicker.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -31,6 +32,11 @@ const router = createRouter({
       path: '/not-found',
       name: 'not-found',
       component: NotFoundView
+    },
+    {
+      path: '/date-picker',
+      name: 'date-picker',
+      component: DatePicker
     }
   ]
 })
