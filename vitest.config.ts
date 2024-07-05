@@ -13,7 +13,7 @@ export default mergeConfig(
                 enabled: true,
                 provider: 'istanbul',
                 reportsDirectory: './tests/unit/coverage',
-                include: ['**/components/**', '**/views/**', '**/store/**'],
+                include: ['**/components/**', '**/views/**', '**/stores/**'],
             },
             server: {
                 deps: {
