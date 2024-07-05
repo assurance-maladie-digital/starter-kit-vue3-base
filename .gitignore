@@ -4,7 +4,7 @@
 dist
 
 # Node dependencies
-node_modulesgit
+/node_modules
 
 # Logs
 logs
