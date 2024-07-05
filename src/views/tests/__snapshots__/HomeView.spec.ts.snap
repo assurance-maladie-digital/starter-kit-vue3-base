@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`HomeView > renders properly 1`] = `
+exports[`HomeView > should render 1`] = `
 "<h1 class="text-primary">Accueil</h1>
 <div class="mt-6 mb-12 d-flex align-center justify-center">
   <div class="v-card v-theme--light v-card--density-default v-card--variant-tonal d-flex" style="width: 695px;">

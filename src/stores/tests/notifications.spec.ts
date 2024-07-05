@@ -3,7 +3,7 @@ import { useNotificationStore } from '../notifications'
 import { describe, it, expect, beforeEach } from 'vitest'
 
 describe('Notification Store', () => {
-    let store: any
+    let store: ReturnType<typeof useNotificationStore>
 
     beforeEach(() => {
         const pinia = createPinia()
