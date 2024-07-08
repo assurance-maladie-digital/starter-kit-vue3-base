@@ -100,7 +100,16 @@ import { getConfig } from '@/composables/injectEnv'
 import { useCounterStore } from '@/stores/counter'
 import { useNotificationStore } from '@/stores/notifications'
 
-const data = getConfig()
+interface ConfigData {
+  config: {
+    value: {
+      title?: string;
+      message?: string;
+    };
+  };
+}
+
+const data = getConfig() as ConfigData;
 const counterStore = useCounterStore()
 const notificationStore = useNotificationStore()
 
