@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { ref, Ref } from 'vue';
 
 import { mount } from '@vue/test-utils'
 import Home from '../HomeView.vue'
