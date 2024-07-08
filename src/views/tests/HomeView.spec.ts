@@ -1,10 +1,12 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 import {mount} from '@vue/test-utils'
 import Home from '../HomeView.vue'
 import { vuetify } from '../../../tests/unit/setup'
 
 import { createPinia, setActivePinia } from 'pinia'
+
+import * as injectEnv from '@/composables/injectEnv'
 
 describe('HomeView', () => {
     beforeEach(() => {
@@ -25,25 +27,24 @@ describe('HomeView', () => {
     })
 
     it('renders title from config', async () => {
-        const mockConfig = {
-            data: {
-                config: {
-                    value: {
-                        title: 'Test Title',
-                        message: 'Test Message'
-                    }
-                }
-            }
-        }
+        // Mock the getConfig function to return a specific title
+        const mockGetConfig = vi.spyOn(injectEnv, 'getConfig').mockReturnValue({
+            config: { value: { title: 'Mocked Title' } },
+            error: null
+        });
 
         const wrapper = mount(Home, {
             global: {
                 plugins: [vuetify],
-                mocks: mockConfig
             },
         })
 
-        const h1Text = wrapper.find('h1').text()
-        expect(h1Text).toContain('Test Title')
+
+        // Assert that the computed title is rendered
+        const h1Text = wrapper.find('h1').text();
+        expect(h1Text).toContain('Mocked Title');
+
+        // Clean up the mock to avoid affecting other tests
+        mockGetConfig.mockRestore();
     })
 })
