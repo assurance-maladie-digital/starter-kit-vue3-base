@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { ref, Ref } from 'vue';
 
 import { mount } from '@vue/test-utils'
 import Home from '../HomeView.vue'
@@ -69,7 +70,7 @@ describe('HomeView', () => {
 
         const notificationStore = useNotificationStore()
         const spy = vi.spyOn(notificationStore, 'create')
-
+        expect(wrapper.vm.removeNotification).toBeDefined()
         wrapper.vm.createNotification()
 
         expect(spy).toHaveBeenCalledWith({

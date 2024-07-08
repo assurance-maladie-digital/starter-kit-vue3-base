@@ -94,7 +94,6 @@
 <script setup lang="ts">
 import HelloWorld from '../components/HelloWorld.vue'
 import { BackBtn } from '@cnamts/synapse-bridge'
-
 import { computed } from 'vue'
 
 import { getConfig } from '@/composables/injectEnv'
