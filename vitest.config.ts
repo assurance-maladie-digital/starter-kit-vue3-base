@@ -11,7 +11,7 @@ export default mergeConfig(
             root: fileURLToPath(new URL('./', import.meta.url)),
             coverage: {
                 enabled: true,
-                provider: 'istanbul',
+                provider: 'v8',
                 reportsDirectory: './tests/unit/coverage',
                 include: ['**/components/**', '**/views/**', '**/stores/**'],
             },
@@ -24,6 +24,7 @@ export default mergeConfig(
                     ],
                 },
             },
+            silent: true,
             setupFiles: ['./tests/unit/setup.ts'],
         },
     })
