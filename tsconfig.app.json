@@ -7,7 +7,7 @@
         "src/**/tests/*",
         "tests/unit/**/*"
     ],
-    "exclude": ["src/**/__tests__/*", "src/**/tests/*", "tests/unit/**/*", "node_modules"],
+    "exclude": ["src/**/__tests__/*", "src/**/tests/*", "tests/unit/**/*"],
     "compilerOptions": {
         "target": "esnext",
         "module": "esnext",
@@ -17,16 +17,14 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "composite": true,
-        "types": [
-            "node",
-            "vuex",
-            "vuetify"
-        ],
+        "types": ["node", "vuex", "vuetify"],
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],
-            "@cnamts/synapse-bridge/modules/notification": ["node_modules/@cnamts/synapse-bridge/src/modules/notification/index.ts"]
+            "@cnamts/synapse-bridge/modules/notification": [
+                "node_modules/@cnamts/synapse-bridge/src/modules/notification/index.ts"
+            ]
         }
-    },
+    }
 }

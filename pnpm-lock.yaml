@@ -5,27 +5,30 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@cnamts/design-tokens':
-    specifier: 2.16.6
-    version: 2.16.6
-  '@cnamts/synapse-bridge':
-    specifier: 1.4.5-alpha.0
-    version: 1.4.5-alpha.0(vue@3.4.30)(vuetify@3.6.10)(vuex@4.1.0)
-  '@mdi/font':
-    specifier: ^7.4.47
-    version: 7.4.47
-  pinia:
-    specifier: ^2.1.7
-    version: 2.1.7(typescript@5.4.5)(vue@3.4.30)
-  vue:
-    specifier: ^3.4.29
-    version: 3.4.30(typescript@5.4.5)
-  vue-router:
-    specifier: ^4.3.3
-    version: 4.4.0(vue@3.4.30)
-  vuetify:
-    specifier: ^3.5.10
-    version: 3.6.10(typescript@5.4.5)(vue@3.4.30)
+    '@cnamts/design-tokens':
+        specifier: 2.16.6
+        version: 2.16.6
+    '@cnamts/synapse-bridge':
+        specifier: 1.4.4-alpha.0
+        version: 1.4.4-alpha.0(vue@3.4.30)(vuetify@3.6.10)(vuex@4.0.2)
+    '@mdi/font':
+        specifier: ^7.4.47
+        version: 7.4.47
+    pinia:
+        specifier: ^2.1.7
+        version: 2.1.7(typescript@5.4.5)(vue@3.4.30)
+    vue:
+        specifier: ^3.4.29
+        version: 3.4.30(typescript@5.4.5)
+    vue-router:
+        specifier: ^4.3.3
+        version: 4.4.0(vue@3.4.30)
+    vuetify:
+        specifier: ^3.5.10
+        version: 3.6.10(typescript@5.4.5)(vue@3.4.30)
+    vuex:
+        specifier: ^4.0.2
+        version: 4.0.2(vue@3.4.30)
 
 devDependencies:
   '@rushstack/eslint-patch':
@@ -498,20 +501,23 @@ packages:
     resolution: {integrity: sha512-at3kWqPxgNuVFcnoiPEex96/DXG22g6osI+IDNA2ttuBb2SfClDSRlrj/MroVMUfzvLGRzf3IggO5uG98fqiJQ==}
     dev: false
 
-  /@cnamts/synapse-bridge@1.4.5-alpha.0(vue@3.4.30)(vuetify@3.6.10)(vuex@4.1.0):
-    resolution: {integrity: sha512-jMn4Qimqh76udALtZ7I4lZuV82glByGclsZb8cYnCv9Efr32l76G0VRE5qSF73GneGJ0y/vmmLCtlHVwqq7pXg==}
-    peerDependencies:
-      vue: ^3.4.21
-      vuetify: 3.5.10
-      vuex: ^4.1.0
-    dependencies:
-      '@cnamts/design-tokens': 2.12.0
-      '@vuepic/vue-datepicker': 8.8.0(vue@3.4.30)
-      consola: 2.15.3
-      vue: 3.4.30(typescript@5.4.5)
-      vuetify: 3.6.10(typescript@5.4.5)(vue@3.4.30)
-      vuex: 4.1.0(vue@3.4.30)
-    dev: false
+    /@cnamts/synapse-bridge@1.4.4-alpha.0(vue@3.4.30)(vuetify@3.6.10)(vuex@4.0.2):
+        resolution:
+            {
+                integrity: sha512-bqx92b6qxiRkFi3N6yD806bZytpz5KWbNrgUgTVyEHNftd9J7h0SiJ5xk8wBeRje+TKD0p7g7Lm3o6gL81KU5g==,
+            }
+        peerDependencies:
+            vue: ^3.4.21
+            vuetify: 3.5.10
+            vuex: ^4.1.0
+        dependencies:
+            '@cnamts/design-tokens': 2.12.0
+            '@vuepic/vue-datepicker': 8.8.0(vue@3.4.30)
+            consola: 2.15.3
+            vue: 3.4.30(typescript@5.4.5)
+            vuetify: 3.6.10(typescript@5.4.5)(vue@3.4.30)
+            vuex: 4.0.2(vue@3.4.30)
+        dev: false
 
   /@colors/colors@1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -4927,14 +4933,17 @@ packages:
       vue: 3.4.30(typescript@5.4.5)
     dev: false
 
-  /vuex@4.1.0(vue@3.4.30):
-    resolution: {integrity: sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ==}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@vue/devtools-api': 6.6.3
-      vue: 3.4.30(typescript@5.4.5)
-    dev: false
+    /vuex@4.0.2(vue@3.4.30):
+        resolution:
+            {
+                integrity: sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==,
+            }
+        peerDependencies:
+            vue: ^3.0.2
+        dependencies:
+            '@vue/devtools-api': 6.6.3
+            vue: 3.4.30(typescript@5.4.5)
+        dev: false
 
   /w3c-xmlserializer@5.0.0:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
