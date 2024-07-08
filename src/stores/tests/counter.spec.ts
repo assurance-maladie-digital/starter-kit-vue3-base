@@ -14,7 +14,7 @@ describe('Counter Store', () => {
         expect(store.$state).toEqual({
             count: 0,
         })
-    });
+    })
 
     it('increments the count', () => {
         store.increment()
@@ -31,5 +31,4 @@ describe('Counter Store', () => {
         store.reset()
         expect(store.count).toBe(0)
     })
-
 })

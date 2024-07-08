@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-import {mount} from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Home from '../HomeView.vue'
 import { vuetify } from '../../../tests/unit/setup'
 
@@ -30,9 +30,11 @@ describe('HomeView', () => {
     it('renders title from config', async () => {
         // Mock the getConfig function to return a specific title
         const mockGetConfig = vi.spyOn(injectEnv, 'getConfig').mockReturnValue({
-            config: { value: { title: 'Mocked title', message:'Mocked message' } },
-            error: null
-        });
+            config: {
+                value: { title: 'Mocked title', message: 'Mocked message' },
+            },
+            error: null,
+        })
 
         const wrapper = mount(Home, {
             global: {
@@ -40,13 +42,13 @@ describe('HomeView', () => {
             },
         })
 
-        const h1Text = wrapper.find('h1').text();
-        expect(h1Text).toContain('Mocked title');
+        const h1Text = wrapper.find('h1').text()
+        expect(h1Text).toContain('Mocked title')
 
-        const helloWorld = wrapper.find('.helloWorld').text();
-        expect(helloWorld).toContain('Mocked message');
+        const helloWorld = wrapper.find('.helloWorld').text()
+        expect(helloWorld).toContain('Mocked message')
 
-        mockGetConfig.mockRestore();
+        mockGetConfig.mockRestore()
     })
 
     it('renders default message when no prop is provided', () => {
@@ -54,12 +56,9 @@ describe('HomeView', () => {
             global: {
                 plugins: [vuetify],
             },
-
         })
         expect(wrapper.text()).toContain('Bonjour')
     })
-
-
 
     it('calls notificationStore.create with correct payload when createNotification is called', async () => {
         const wrapper = mount(Home, {
@@ -73,7 +72,10 @@ describe('HomeView', () => {
 
         wrapper.vm.createNotification()
 
-        expect(spy).toHaveBeenCalledWith({ message: 'Notification de test', type: 'success' })
+        expect(spy).toHaveBeenCalledWith({
+            message: 'Notification de test',
+            type: 'success',
+        })
 
         spy.mockRestore()
     })
@@ -93,5 +95,4 @@ describe('HomeView', () => {
 
         spy.mockRestore()
     })
-
 })

@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount, VueWrapper } from '@vue/test-utils'
 import NotFound from '../NotFoundView.vue'
 import { vuetify } from '../../../tests/unit/setup'
-import router from "@/router"
+import router from '@/router'
 
 describe('NotFoundView', () => {
     const mockRouter = {
@@ -42,7 +42,7 @@ describe('NotFoundView', () => {
         expect(button.exists()).toBe(true)
 
         await button.trigger('click')
-        await wrapper.vm.$nextTick();
+        await wrapper.vm.$nextTick()
         expect(wrapper.vm.setSupportId).toHaveBeenCalled
     })
 })
