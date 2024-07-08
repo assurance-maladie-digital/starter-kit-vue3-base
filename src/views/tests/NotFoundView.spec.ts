@@ -1,7 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { mount, VueWrapper } from '@vue/test-utils'
 import NotFound from '../NotFoundView.vue'
 import { vuetify } from '../../../tests/unit/setup'
+import router from "@/router"
 
 describe('NotFoundView', () => {
     const mockRouter = {
@@ -14,12 +15,12 @@ describe('NotFoundView', () => {
         path: '/test',
     }
 
-    let wrapper: any
+    let wrapper: VueWrapper<any>
 
     beforeEach(async () => {
         wrapper = mount(NotFound, {
             global: {
-                plugins: [vuetify],
+                plugins: [vuetify, router],
                 mocks: {
                     $router: mockRouter,
                     $route: mockRoute,
@@ -36,10 +37,12 @@ describe('NotFoundView', () => {
         expect(h2Text).toContain('Page non trouvée')
     })
 
-    /*it('should render and call setSupportId method', async () => {
-        wrapper.vm.setSupportId();
-        await wrapper.vm.$nextTick();
+    it('should render and call setSupportId method', async () => {
+        const button = wrapper.find('.setSupportId')
+        expect(button.exists()).toBe(true)
 
-        expect(mockRouter.push).toHaveBeenCalled();
-    })*/
+        await button.trigger('click')
+        await wrapper.vm.$nextTick();
+        expect(wrapper.vm.setSupportId).toHaveBeenCalled
+    })
 })

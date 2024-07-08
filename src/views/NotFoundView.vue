@@ -1,7 +1,7 @@
 <template>
     <NotFoundPage :key="$route.fullPath" class="mb-6" />
     <PageContainer size="m" spacing="pa-0 pb-8">
-        <VBtn color="primary" @click="setSupportId">
+        <VBtn class="setSupportId" color="primary" @click="setSupportId">
             Afficher l’identifiant de support
         </VBtn>
     </PageContainer>
