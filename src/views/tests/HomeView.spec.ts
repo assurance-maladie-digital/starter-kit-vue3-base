@@ -5,6 +5,7 @@ import Home from '../HomeView.vue'
 import { vuetify } from '../../../tests/unit/setup'
 
 import { createPinia, setActivePinia } from 'pinia'
+import { useNotificationStore } from '@/stores/notifications'
 
 import * as injectEnv from '@/composables/injectEnv'
 
@@ -39,12 +40,43 @@ describe('HomeView', () => {
             },
         })
 
-
-        // Assert that the computed title is rendered
         const h1Text = wrapper.find('h1').text();
         expect(h1Text).toContain('Mocked Title');
 
-        // Clean up the mock to avoid affecting other tests
         mockGetConfig.mockRestore();
     })
-})
+
+    it('calls notificationStore.create with correct payload when createNotification is called', async () => {
+        const wrapper = mount(Home, {
+            global: {
+                plugins: [vuetify],
+            },
+        })
+
+        const notificationStore = useNotificationStore()
+        const spy = vi.spyOn(notificationStore, 'create')
+
+        wrapper.vm.createNotification()
+
+        expect(spy).toHaveBeenCalledWith({ message: 'Notification de test', type: 'success' })
+
+        spy.mockRestore()
+    })
+    it('calls notificationStore.remove when removeNotification is called', async () => {
+        const wrapper = mount(Home, {
+            global: {
+                plugins: [vuetify],
+            },
+        })
+
+        const notificationStore = useNotificationStore()
+        const spy = vi.spyOn(notificationStore, 'remove')
+
+        wrapper.vm.removeNotification()
+
+        expect(spy).toHaveBeenCalled()
+
+        spy.mockRestore()
+    })
+
+    })
