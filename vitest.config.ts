@@ -24,6 +24,7 @@ export default mergeConfig(
                     ],
                 },
             },
+            silent: true,
             setupFiles: ['./tests/unit/setup.ts'],
         },
     })
