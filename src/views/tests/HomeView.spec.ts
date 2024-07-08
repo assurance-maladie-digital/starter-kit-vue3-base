@@ -30,7 +30,7 @@ describe('HomeView', () => {
     it('renders title from config', async () => {
         // Mock the getConfig function to return a specific title
         const mockGetConfig = vi.spyOn(injectEnv, 'getConfig').mockReturnValue({
-            config: { value: { title: 'Mocked Title' } },
+            config: { value: { title: 'Mocked title', message:'Mocked message' } },
             error: null
         });
 
@@ -41,10 +41,25 @@ describe('HomeView', () => {
         })
 
         const h1Text = wrapper.find('h1').text();
-        expect(h1Text).toContain('Mocked Title');
+        expect(h1Text).toContain('Mocked title');
+
+        const helloWorld = wrapper.find('.helloWorld').text();
+        expect(helloWorld).toContain('Mocked message');
 
         mockGetConfig.mockRestore();
     })
+
+    it('renders default message when no prop is provided', () => {
+        const wrapper = mount(Home, {
+            global: {
+                plugins: [vuetify],
+            },
+
+        })
+        expect(wrapper.text()).toContain('Bonjour')
+    })
+
+
 
     it('calls notificationStore.create with correct payload when createNotification is called', async () => {
         const wrapper = mount(Home, {
@@ -79,4 +94,4 @@ describe('HomeView', () => {
         spy.mockRestore()
     })
 
-    })
+})

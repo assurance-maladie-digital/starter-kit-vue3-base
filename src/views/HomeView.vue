@@ -12,7 +12,7 @@
             <v-card color="grey-lighten-4" class="mx-auto">
                 <v-card-title>Exemple de composant Vue</v-card-title>
                 <v-card-item>
-                    <HelloWorld :msg="message ? message : 'Bonjour'" />
+                    <HelloWorld class="helloWorld" :msg="message ? message : 'Bonjour'" />
                 </v-card-item>
             </v-card>
         </v-col>
