@@ -28,18 +28,6 @@ const navigationItems = [
     {
         label: 'Accueil',
         to: '/home',
-    },
-    {
-        label: 'Tokens',
-        to: '/tokens',
-    },
-    {
-        label: 'Maintenance',
-        to: '/maintenance',
-    },
-    {
-        label: 'Erreur',
-        to: '/not-found',
-    },
+    }
 ]
 </script>
