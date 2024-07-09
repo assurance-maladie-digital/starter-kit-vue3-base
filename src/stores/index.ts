@@ -1,11 +1,17 @@
 import { createStore } from 'vuex'
 
+interface Notification {
+    id: string;
+    message: string;
+    type: string;
+}
+
 const store = createStore({
     state: {
-        notifications: [],
+        notifications: [] as Notification[],
     },
     mutations: {
-        addNotification(state, notification) {
+        addNotification(state, notification: Notification) {
             state.notifications.push(notification)
         },
         clearNotification(state) {
@@ -13,7 +19,7 @@ const store = createStore({
         },
     },
     actions: {
-        addNotification({ commit }, notification) {
+        addNotification({ commit }, notification: Notification) {
             commit('addNotification', notification)
         },
         clearNotification({ commit }) {
