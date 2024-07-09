@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { useStore as useVuexStore } from 'vuex'
+import store from '@/stores/'
 import type { NotificationObj } from '@cnamts/synapse-bridge/src/modules/notification/types'
 
 export const useNotificationStore = defineStore({
@@ -10,13 +10,11 @@ export const useNotificationStore = defineStore({
     actions: {
         async create(payload: NotificationObj) {
             this.notificationPayload = payload
-            const vuexStore = useVuexStore()
-            await vuexStore.dispatch('notification/addNotification', payload)
+            await store.dispatch('addNotification', payload)
         },
         remove() {
             this.notificationPayload = null
-            const vuexStore = useVuexStore()
-            vuexStore.dispatch('notification/clearNotification')
+            store.dispatch('clearNotification').then((r) => r)
         },
     },
 })

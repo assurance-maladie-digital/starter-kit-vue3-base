@@ -101,15 +101,15 @@ import { useCounterStore } from '@/stores/counter'
 import { useNotificationStore } from '@/stores/notifications'
 
 interface ConfigData {
-  config: {
-    value: {
-      title?: string;
-      message?: string;
-    };
-  };
+    config: {
+        value: {
+            title?: string
+            message?: string
+        }
+    }
 }
 
-const data = getConfig() as ConfigData;
+const data = getConfig() as ConfigData
 const counterStore = useCounterStore()
 const notificationStore = useNotificationStore()
 

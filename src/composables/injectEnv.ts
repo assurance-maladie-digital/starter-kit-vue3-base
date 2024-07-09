@@ -2,10 +2,9 @@ import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
 
 interface Config {
-    title: string;
-    message: string;
+    title: string
+    message: string
 }
-
 
 export function getConfig(): { config: Ref<Config | {}> } {
     const config = ref<Config | {}>({})

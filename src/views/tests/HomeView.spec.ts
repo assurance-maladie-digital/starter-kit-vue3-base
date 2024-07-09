@@ -8,7 +8,7 @@ import { createPinia, setActivePinia } from 'pinia'
 import { useNotificationStore } from '@/stores/notifications'
 
 import * as injectEnv from '@/composables/injectEnv'
-import {nextTick} from "vue";
+import { nextTick } from 'vue'
 
 describe('HomeView', () => {
     beforeEach(() => {
@@ -70,7 +70,10 @@ describe('HomeView', () => {
 
         const notificationStore = useNotificationStore()
         const spy = vi.spyOn(notificationStore, 'create')
-        await notificationStore.create({'message': 'Notification de test', 'type': 'success'})
+        await notificationStore.create({
+            message: 'Notification de test',
+            type: 'success',
+        })
 
         expect(spy).toHaveBeenCalledWith({
             message: 'Notification de test',
@@ -79,7 +82,7 @@ describe('HomeView', () => {
 
         spy.mockRestore()
     })
-    it('calls notificationStore.remove when removeNotification is called', async () => {
+    it('successfully removes a notification', async () => {
         const wrapper = mount(Home, {
             global: {
                 plugins: [vuetify],
@@ -88,8 +91,7 @@ describe('HomeView', () => {
 
         const notificationStore = useNotificationStore()
         const spy = vi.spyOn(notificationStore, 'remove')
-
-        notificationStore.remove()
+        await notificationStore.remove()
 
         expect(spy).toHaveBeenCalled()
 
