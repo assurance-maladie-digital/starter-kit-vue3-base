@@ -34,7 +34,7 @@ describe('HomeView', () => {
                 value: { title: 'Mocked title', message: 'Mocked message' },
             },
             error: null,
-        })
+        } as any)
 
         const wrapper = mount(Home, {
             global: {

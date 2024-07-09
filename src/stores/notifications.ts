@@ -7,7 +7,7 @@ export const useNotificationStore = defineStore({
         notificationPayload: null,
     }),
     actions: {
-        create(payload: any) {
+     async create(payload: any) {
             this.notificationPayload = payload
             notificationActions.addNotification(
                 { commit: () => {}, state: {} },

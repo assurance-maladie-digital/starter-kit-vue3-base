@@ -28,5 +28,5 @@
             "@/*": ["./src/*"],
             "@cnamts/synapse-bridge/modules/notification": ["node_modules/@cnamts/synapse-bridge/src/modules/notification/index.ts"]
         }
-    }
+    },
 }
