@@ -77,8 +77,17 @@ import { computed } from 'vue'
 import { getConfig } from '@/composables/injectEnv'
 import { useCounterStore } from '@/stores/counter'
 
-const data = getConfig()
-const counterStore = useCounterStore()
+interface ConfigData {
+  config: {
+    value: {
+      title?: string;
+      message?: string;
+    };
+  };
+}
+
+const data = getConfig() as ConfigData;
+const counterStore = useCounterStore();
 
 const title = computed(() => {
     return data ? data.config.value.title : 'Accueil'
