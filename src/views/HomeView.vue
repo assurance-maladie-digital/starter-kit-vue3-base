@@ -100,7 +100,16 @@ import { getConfig } from '@/composables/injectEnv'
 import { useCounterStore } from '@/stores/counter'
 import { useNotificationStore } from '@/stores/notifications'
 
-const data = getConfig()
+interface ConfigData {
+  config: {
+    value: {
+      title?: string;
+      message?: string;
+    };
+  };
+}
+
+const data = getConfig() as ConfigData;
 const counterStore = useCounterStore()
 const notificationStore = useNotificationStore()
 
@@ -114,9 +123,10 @@ const message = computed(() => {
 
 function createNotification() {
     const payload = {
+        ref: '1',
         message: 'Notification de test',
         type: 'success',
-    }
+    } as any
     notificationStore.create(payload)
 }
 

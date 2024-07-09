@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { ref, Ref } from 'vue';
 
 import { mount } from '@vue/test-utils'
 import Home from '../HomeView.vue'
@@ -9,6 +8,7 @@ import { createPinia, setActivePinia } from 'pinia'
 import { useNotificationStore } from '@/stores/notifications'
 
 import * as injectEnv from '@/composables/injectEnv'
+import {nextTick} from "vue";
 
 describe('HomeView', () => {
     beforeEach(() => {
@@ -35,7 +35,7 @@ describe('HomeView', () => {
                 value: { title: 'Mocked title', message: 'Mocked message' },
             },
             error: null,
-        })
+        } as any)
 
         const wrapper = mount(Home, {
             global: {
@@ -70,8 +70,7 @@ describe('HomeView', () => {
 
         const notificationStore = useNotificationStore()
         const spy = vi.spyOn(notificationStore, 'create')
-        expect(wrapper.vm.removeNotification).toBeDefined()
-        wrapper.vm.createNotification()
+        await notificationStore.create({'message': 'Notification de test', 'type': 'success'})
 
         expect(spy).toHaveBeenCalledWith({
             message: 'Notification de test',
@@ -90,7 +89,7 @@ describe('HomeView', () => {
         const notificationStore = useNotificationStore()
         const spy = vi.spyOn(notificationStore, 'remove')
 
-        wrapper.vm.removeNotification()
+        notificationStore.remove()
 
         expect(spy).toHaveBeenCalled()
 

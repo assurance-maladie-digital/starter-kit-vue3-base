@@ -35,13 +35,15 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useTheme } from 'vuetify'
-
+interface GroupedColors {
+  [key: string]: { [key: string]: string };
+}
 const selectedColor = ref('')
 const theme = useTheme()
 
 const groupedColors = computed(() => {
     const colors = theme.current.value.colors || {}
-    const grouped = {}
+    const grouped : GroupedColors = {}
     for (const color in colors) {
         if (color) {
             const group = color.split('-')[0]
@@ -56,7 +58,7 @@ const groupedColors = computed(() => {
     return grouped
 })
 
-const isDarkColor = (color) => {
+const isDarkColor = (color: any) => {
     const c = color.substring(1)
     const rgb = parseInt(c, 16)
     const r = (rgb >> 16) & 0xff

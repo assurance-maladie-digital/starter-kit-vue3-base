@@ -12,7 +12,7 @@ describe('Notification Store', () => {
 
     it('should have an initial state of empty object', () => {
         expect(store.$state).toEqual({
-            notificationPayload: null,
+            notificationPayload: {},
         })
     })
 })
