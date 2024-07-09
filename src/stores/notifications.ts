@@ -1,22 +1,22 @@
 import { defineStore } from 'pinia'
-import { actions as notificationActions } from '@cnamts/synapse-bridge/modules/notification'
+import { useStore as useVuexStore } from 'vuex'
+import type { NotificationObj } from '@cnamts/synapse-bridge/src/modules/notification/types'
 
 export const useNotificationStore = defineStore({
     id: 'notification',
     state: () => ({
-        notificationPayload: null,
+        notificationPayload: {} as NotificationObj | null,
     }),
     actions: {
-     async create(payload: any) {
+        async create(payload: NotificationObj) {
             this.notificationPayload = payload
-            notificationActions.addNotification(
-                { commit: () => {}, state: {} },
-                payload
-            )
+            const vuexStore = useVuexStore()
+            await vuexStore.dispatch('notification/addNotification', payload)
         },
         remove() {
             this.notificationPayload = null
-            notificationActions.clearNotification({ commit: () => {} })
+            const vuexStore = useVuexStore()
+            vuexStore.dispatch('notification/clearNotification')
         },
     },
 })

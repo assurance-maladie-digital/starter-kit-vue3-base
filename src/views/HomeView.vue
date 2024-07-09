@@ -123,9 +123,10 @@ const message = computed(() => {
 
 function createNotification() {
     const payload = {
+        ref: '1',
         message: 'Notification de test',
         type: 'success',
-    }
+    } as any
     notificationStore.create(payload)
 }
 
