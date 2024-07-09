@@ -64,28 +64,6 @@
                         </v-btn>
                     </div>
                 </v-card-item>
-                <v-card-item>
-                    <div>
-                        Notification:
-                        {{ notificationStore?.notificationPayload }}
-                    </div>
-                    <div class="d-flex flex-wrap align-center justify-center">
-                        <v-btn
-                            color="primary"
-                            class="ma-2"
-                            @click="createNotification"
-                        >
-                            Créer une notification
-                        </v-btn>
-                        <v-btn
-                            color="primary"
-                            class="ma-2"
-                            @click="removeNotification"
-                        >
-                            Supprimer une notification
-                        </v-btn>
-                    </div>
-                </v-card-item>
             </v-card>
         </v-col>
     </v-row>
@@ -98,11 +76,18 @@ import { computed } from 'vue'
 
 import { getConfig } from '@/composables/injectEnv'
 import { useCounterStore } from '@/stores/counter'
-import { useNotificationStore } from '@/stores/notifications'
 
-const data = getConfig()
-const counterStore = useCounterStore()
-const notificationStore = useNotificationStore()
+interface ConfigData {
+  config: {
+    value: {
+      title?: string;
+      message?: string;
+    };
+  };
+}
+
+const data = getConfig() as ConfigData;
+const counterStore = useCounterStore();
 
 const title = computed(() => {
     return data ? data.config.value.title : 'Accueil'
@@ -111,16 +96,4 @@ const title = computed(() => {
 const message = computed(() => {
     return data ? data.config.value.message : 'Bonjour'
 })
-
-function createNotification() {
-    const payload = {
-        message: 'Notification de test',
-        type: 'success',
-    }
-    notificationStore.create(payload)
-}
-
-function removeNotification() {
-    notificationStore.remove()
-}
 </script>
