@@ -1,7 +1,14 @@
 import { onMounted, ref } from 'vue'
+import type { Ref } from 'vue'
 
-export function getConfig() {
-    const config = ref({})
+interface Config {
+    title: string;
+    message: string;
+}
+
+
+export function getConfig(): { config: Ref<Config | {}> } {
+    const config = ref<Config | {}>({})
 
     const fetchAndSetConfig = async () => {
         try {
