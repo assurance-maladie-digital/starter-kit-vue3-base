@@ -5,8 +5,10 @@ import Home from '../HomeView.vue'
 import { vuetify } from '../../../tests/unit/setup'
 
 import { createPinia, setActivePinia } from 'pinia'
+import { useNotificationStore } from '@/stores/notifications'
 
 import * as injectEnv from '@/composables/injectEnv'
+import { nextTick } from 'vue'
 
 describe('HomeView', () => {
     beforeEach(() => {
@@ -57,5 +59,42 @@ describe('HomeView', () => {
             },
         })
         expect(wrapper.text()).toContain('Bonjour')
+    })
+
+    it('calls notificationStore.create with correct payload when createNotification is called', async () => {
+        const wrapper = mount(Home, {
+            global: {
+                plugins: [vuetify],
+            },
+        })
+
+        const notificationStore = useNotificationStore()
+        const spy = vi.spyOn(notificationStore, 'create')
+        await notificationStore.create({
+            message: 'Notification de test',
+            type: 'success',
+        })
+
+        expect(spy).toHaveBeenCalledWith({
+            message: 'Notification de test',
+            type: 'success',
+        })
+
+        spy.mockRestore()
+    })
+    it('successfully removes a notification', async () => {
+        const wrapper = mount(Home, {
+            global: {
+                plugins: [vuetify],
+            },
+        })
+
+        const notificationStore = useNotificationStore()
+        const spy = vi.spyOn(notificationStore, 'remove')
+        await notificationStore.remove()
+
+        expect(spy).toHaveBeenCalled()
+
+        spy.mockRestore()
     })
 })
