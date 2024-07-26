@@ -1,10 +1,6 @@
 <template>
     <VApp>
-        <HeaderBar
-            service-title="Titre du service"
-            service-sub-title="Description du service"
-            :navigation-items="navigationItems"
-        />
+        <AppHeader />
         <PageContainer>
             <RouterView />
         </PageContainer>
@@ -22,7 +18,8 @@
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { PageContainer, HeaderBar, FooterBar } from '@cnamts/synapse-bridge'
+import AppHeader from './components/AppHeader.vue';
+import { PageContainer, FooterBar } from '@cnamts/synapse-bridge'
 
 const navigationItems = [
     {
