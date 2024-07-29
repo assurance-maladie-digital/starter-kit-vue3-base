@@ -53,11 +53,6 @@ export const routes = [
         component: () => import('@/views/nirfield/NirfieldPage.vue')
     },
     {
-        path: '/notification-bar',
-        name: 'notification-bar',
-        component: () => import('@/views/notificationBar/NotificationBarPage.vue')
-    },
-    {
         path: '/period-field',
         name: 'period-field',
         component: () => import('@/views/periodField/PeriodFieldPage.vue')
@@ -86,11 +81,6 @@ export const routes = [
         path: '/password-field',
         name: 'password-field',
         component: () => import('@/views/password/PasswordPage.vue')
-    },
-    {
-        path:'/colors',
-        name:'colors',
-        component: () => import('@/views/colors/ColorsPage.vue')
     },
     {
         path:'/rating-picker',
@@ -148,11 +138,6 @@ export const routes = [
         component: () => import('@/views/filtersSidebar/FilterSideBarPage.vue')
     },
     {
-        path:'/filter-side-bar',
-        name:'Filter Side Bar',
-        component: () => import('@/views/filtersSidebar/FilterSideBarPage.vue')
-    },
-    {
         path: '/footer-wrapper',
         name: 'footer-wrapper',
         component: () => import('@/views/footerWrapper/FooterWrapperPage.vue')
@@ -191,12 +176,7 @@ export const routes = [
         path: '/tableToolbar',
         name: 'tableToolbar',
         component: () => import('@/views/tableToolbar/TableToolbarPage.vue')
-    },
-    {
-        path: '/uploadWorflow',
-        name: 'uploadWorflow',
-        component: () => import('@/views/uploadWorkflow/UploadWorkflowPage.vue')
-    },
+    }
 ];
 
 const router = createRouter({

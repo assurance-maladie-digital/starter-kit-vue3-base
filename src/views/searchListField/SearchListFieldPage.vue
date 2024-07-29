@@ -12,7 +12,7 @@ import {defineComponent} from "vue";
 import {
 	SearchListField,
 } from "@cnamts/synapse-bridge";
-import { SearchListItem } from '@cnamts/synapse-bridge/src/patterns/SearchListField/types';
+import type { SearchListItem } from '@cnamts/synapse-bridge/src/patterns/SearchListField/types';
 export default defineComponent({
 	components: {
 		SearchListField,

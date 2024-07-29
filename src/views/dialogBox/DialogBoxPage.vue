@@ -69,11 +69,9 @@ import {
 	DialogBox,
 
 } from "@cnamts/synapse-bridge";
-import AppHeader from "@/views/commons/AppHeader.vue";
 
 export default defineComponent({
 	components: {
-		AppHeader,
 		PageContainer,
 		DialogBox,
 	},

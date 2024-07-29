@@ -72,11 +72,9 @@ import {
 	PeriodField
 } from "@cnamts/synapse-bridge";
 import dayjs from "dayjs";
-import AppHeader from "@/views/commons/AppHeader.vue";
 
 export default defineComponent({
 	components: {
-		AppHeader,
 		PageContainer,
 		HeaderBar,
 		FooterBar,

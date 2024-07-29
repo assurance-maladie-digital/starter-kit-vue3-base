@@ -101,7 +101,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { SubHeader, HeaderLoading } from "@cnamts/synapse-bridge";
-import { DataListGroupItems } from '@cnamts/synapse-bridge/src/patterns/DataListGroup/types';
+import type { DataListGroupItems } from '@cnamts/synapse-bridge/src/patterns/DataListGroup/types';
 export default defineComponent({
 	components: {
 		SubHeader,

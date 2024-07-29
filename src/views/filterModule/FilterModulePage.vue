@@ -29,8 +29,8 @@ import {
 	TableToolbar,
 	FilterModule
 } from "@cnamts/synapse-bridge";
-import { Field } from '@cnamts/synapse-bridge/src/form-builder/FormField/types';
-import { DataTableHeaders } from '@cnamts/synapse-bridge/src/patterns/PaginatedTable/types';
+import type { Field } from '@cnamts/synapse-bridge/form-builder/FormField/types';
+import type { DataTableHeaders } from '@cnamts/synapse-bridge/src/patterns/PaginatedTable/types';
 interface TableItem {
 	[key: string]: string;
 	firstname: string;

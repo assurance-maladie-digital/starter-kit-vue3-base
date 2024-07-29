@@ -65,14 +65,13 @@ import {
 	FooterBar,
 	CookieBanner,
 } from "@cnamts/synapse-bridge";
-import AppHeader from "@/views/commons/AppHeader.vue";
 
 export default defineComponent({
 	components: {
-		AppHeader,
 		PageContainer,
 		HeaderBar,
 		CookieBanner,
+		FooterBar
 	},
 	data() {
 		return {

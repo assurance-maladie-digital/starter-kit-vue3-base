@@ -124,15 +124,15 @@
 import {defineComponent} from "vue";
 import {
 	PageContainer,
-	RatingPicker
+	RatingPicker,
+	EmotionPicker
 } from "@cnamts/synapse-bridge";
-import AppHeader from "@/views/commons/AppHeader.vue";
 
 export default defineComponent({
 	components: {
-		AppHeader,
 		PageContainer,
-		RatingPicker
+		RatingPicker,
+		EmotionPicker
 	},
 	data() {
 		return {

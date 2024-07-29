@@ -172,7 +172,8 @@ import {
 	CopyBtn,
 	BackToTopBtn,
 	DownloadBtn,
-	NotificationBar
+	NotificationBar,
+	FooterBar
 } from "@cnamts/synapse-bridge";
 import {AxiosResponse} from "axios";
 

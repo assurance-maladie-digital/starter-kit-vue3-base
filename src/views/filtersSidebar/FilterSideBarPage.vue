@@ -59,7 +59,7 @@ import {
 	PeriodField,
 	SearchListField
 } from "@cnamts/synapse-bridge";
-import { ChipItem } from "@cnamts/synapse-bridge/src/elements/ChipList/types";
+import type { ChipItem } from "@cnamts/synapse-bridge/src/elements/ChipList/types";
 import dayjs from "dayjs";
 export default defineComponent({
 	components: {
