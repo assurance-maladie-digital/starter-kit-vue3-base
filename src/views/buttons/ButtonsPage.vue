@@ -93,7 +93,7 @@
 			>
 				<template #icon>
 					<VIcon>
-						{{ mdiContentDuplicate }}
+						{{ contentDuplicate }}
 					</VIcon>
 				</template>
 
@@ -147,7 +147,7 @@
 				</VIcon>
 			</DownloadBtn>
 
-			<NotificationBar />
+
 		</div>
 	</PageContainer>
 	<FooterBar
@@ -172,10 +172,9 @@ import {
 	CopyBtn,
 	BackToTopBtn,
 	DownloadBtn,
-	NotificationBar,
 	FooterBar
 } from "@cnamts/synapse-bridge";
-import {AxiosResponse} from "axios";
+import type {AxiosResponse} from "axios";
 
 const file: AxiosResponse<Blob> = {
 	data: new Blob(['test'], { type: 'text/plain' }),
@@ -199,12 +198,14 @@ export default defineComponent({
 		CopyBtn,
 		BackToTopBtn,
 		DownloadBtn,
-		NotificationBar
+		FooterBar
 	},
 	data() {
 		return {
 			downloadIcon: mdiDownload,
 			fileIcon: mdiFile,
+			backIcon: mdiChevronLeft,
+			contentDuplicate: mdiContentDuplicate,
 
 			vuetifyOptions: {
 				icon: {
@@ -216,7 +217,6 @@ export default defineComponent({
 				}
 			},
 			useFallback: true,
-			backIcon:mdiChevronLeft,
 			items: [
 				'Administration',
 				'Profil',

@@ -29,7 +29,7 @@ import {
 	PaginatedTable,
 } from "@cnamts/synapse-bridge";
 
-import { StateEnum } from '@cnamts/synapse-bridge/constants/enums/StateEnum';
+import { StateEnum } from '@cnamts/synapse-bridge';
 import type { DataOptions } from "@cnamts/synapse-bridge/src/patterns/PaginatedTable/types";
 
 interface User {
