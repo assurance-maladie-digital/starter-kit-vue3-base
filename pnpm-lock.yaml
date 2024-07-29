@@ -12,8 +12,8 @@ importers:
         specifier: 2.16.6
         version: 2.16.6
       '@cnamts/synapse-bridge':
-        specifier: 1.4.9-alpha.0
-        version: 1.4.9-alpha.0(vue@3.4.30(typescript@5.5.4))(vuetify@3.6.10(typescript@5.5.4)(vue@3.4.30(typescript@5.5.4)))(vuex@4.1.0(vue@3.4.30(typescript@5.5.4)))
+        specifier: 1.4.10-alpha.0
+        version: 1.4.10-alpha.0(vue@3.4.30(typescript@5.5.4))(vuetify@3.6.10(typescript@5.5.4)(vue@3.4.30(typescript@5.5.4)))(vuex@4.1.0(vue@3.4.30(typescript@5.5.4)))
       '@mdi/js':
         specifier: ^7.4.47
         version: 7.4.47
@@ -303,8 +303,8 @@ packages:
   '@cnamts/design-tokens@2.16.6':
     resolution: {integrity: sha512-at3kWqPxgNuVFcnoiPEex96/DXG22g6osI+IDNA2ttuBb2SfClDSRlrj/MroVMUfzvLGRzf3IggO5uG98fqiJQ==}
 
-  '@cnamts/synapse-bridge@1.4.9-alpha.0':
-    resolution: {integrity: sha512-8h7syYwx78zTRnNsEjvDVq2EsllFh7y9deI5Yx7E4Los/Ofzn2OdufnNGHpsOrFwFLhu3u6UAInDEWlsNZCDOQ==}
+  '@cnamts/synapse-bridge@1.4.10-alpha.0':
+    resolution: {integrity: sha512-UTCNtFAXtzNx9e9MTjZGkCJqhIDNi2Tqt0vuck8/ylOh1LWfPmnYO4ubnalMRpRfaDUMsV2mVsVEXmSERPAxrw==}
     peerDependencies:
       vue: ^3.4.21
       vuetify: 3.5.10
@@ -3114,7 +3114,7 @@ snapshots:
 
   '@cnamts/design-tokens@2.16.6': {}
 
-  '@cnamts/synapse-bridge@1.4.9-alpha.0(vue@3.4.30(typescript@5.5.4))(vuetify@3.6.10(typescript@5.5.4)(vue@3.4.30(typescript@5.5.4)))(vuex@4.1.0(vue@3.4.30(typescript@5.5.4)))':
+  '@cnamts/synapse-bridge@1.4.10-alpha.0(vue@3.4.30(typescript@5.5.4))(vuetify@3.6.10(typescript@5.5.4)(vue@3.4.30(typescript@5.5.4)))(vuex@4.1.0(vue@3.4.30(typescript@5.5.4)))':
     dependencies:
       '@cnamts/design-tokens': 2.12.0
       '@vuepic/vue-datepicker': 8.8.0(vue@3.4.30(typescript@5.5.4))
