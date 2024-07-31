@@ -10,7 +10,7 @@ dependencies:
     version: 2.16.8
   '@cnamts/synapse-bridge':
     specifier: 1.4.10-alpha.0
-    version: 1.4.10-alpha.0(vue@3.4.34)(vuetify@3.6.13)(vuex@4.1.0)
+    version: 1.4.10-alpha.0(vue@3.4.34)(vuetify@3.6.14)(vuex@4.1.0)
   '@mdi/js':
     specifier: ^7.4.47
     version: 7.4.47
@@ -25,7 +25,7 @@ dependencies:
     version: 4.4.0(vue@3.4.34)
   vuetify:
     specifier: ^3.6.13
-    version: 3.6.13(typescript@5.4.5)(vue@3.4.34)
+    version: 3.6.14(typescript@5.4.5)(vue@3.4.34)
 
 devDependencies:
   '@rushstack/eslint-patch':
@@ -464,7 +464,7 @@ packages:
     resolution: {integrity: sha512-kfB6/w36usiHbudDoBa8PdLgPlHhk0f8/dnZf539OdN9Hm58lmW6/vgKqp8d9Rikf60nhlE0LCX46CKl/ztu1A==}
     dev: false
 
-  /@cnamts/synapse-bridge@1.4.10-alpha.0(vue@3.4.34)(vuetify@3.6.13)(vuex@4.1.0):
+  /@cnamts/synapse-bridge@1.4.10-alpha.0(vue@3.4.34)(vuetify@3.6.14)(vuex@4.1.0):
     resolution: {integrity: sha512-UTCNtFAXtzNx9e9MTjZGkCJqhIDNi2Tqt0vuck8/ylOh1LWfPmnYO4ubnalMRpRfaDUMsV2mVsVEXmSERPAxrw==}
     peerDependencies:
       vue: ^3.4.21
@@ -475,7 +475,7 @@ packages:
       '@vuepic/vue-datepicker': 8.8.1(vue@3.4.34)
       consola: 2.15.3
       vue: 3.4.34(typescript@5.4.5)
-      vuetify: 3.6.13(typescript@5.4.5)(vue@3.4.34)
+      vuetify: 3.6.14(typescript@5.4.5)(vue@3.4.34)
       vuex: 4.1.0(vue@3.4.34)
     dev: false
 
@@ -4776,8 +4776,8 @@ packages:
       '@vue/shared': 3.4.34
       typescript: 5.4.5
 
-  /vuetify@3.6.13(typescript@5.4.5)(vue@3.4.34):
-    resolution: {integrity: sha512-Gz7jxXAkmff2m6CM0EUWOo/72TM322/3I6aDna++k1nPOW1/hNx4td1MZG4u75fzdn3r+uIe0dbF7SWuhu6DWA==}
+  /vuetify@3.6.14(typescript@5.4.5)(vue@3.4.34):
+    resolution: {integrity: sha512-iSa3CgdTEt/7B0aGDmkBARe8rxDDycEYHu1zNtOf1Xpvs/Tv7Ql5yHGqM2XCY0h7SL8Dme39pJIovzg3q4JLbQ==}
     engines: {node: ^12.20 || >=14.13}
     peerDependencies:
       typescript: '>=4.7'
